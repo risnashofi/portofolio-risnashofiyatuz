@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-black: #070707;
+  --color-brand-dark: #0E0E0E;
+  --color-brand-panel: #121212;
+  --color-brand-card: #161616;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  --color-brand-border-red: #4a0a0f;
+  --color-brand-red: #D1121B;
+  --color-brand-red-light: #F0434B;
+  --color-brand-red-deep: #3B0508;
+  --color-brand-muted: #8F9094;
+
+  --font-anton: "Anton", Impact, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: "Mrs Saint Delafield", cursive;
+  --font-serif-script: "Playfair Display", Georgia, serif;
+
+  --tracking-widest-plus: 0.25em;
+  --tracking-giant: 0.05em;
+
+  --shadow-glow-red: 0 0 50px -10px rgba(209, 18, 27, 0.35);
+  --shadow-glow-red-lg: 0 0 90px -15px rgba(209, 18, 27, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #070707;
+}
+
+body {
+  background-color: #070707;
+  color: #E2E2E2;
+  overflow-x: hidden;
+}
+
+/* Subtle dot-grid grain overlay */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Giant PORTFOLIO typography red gradient */
+.portfolio-giant-text {
+  background: linear-gradient(180deg, #D1121B 0%, #68080E 65%, #220306 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+
+/* Portrait bottom fade */
+.portrait-mask {
+  mask-image: linear-gradient(to bottom, black 65%, rgba(0, 0, 0, 0.15) 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, rgba(0, 0, 0, 0.15) 88%, transparent 100%);
+}
+
+/* 3D Laptop Perspective */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.laptop-tilt {
+  transform: rotateY(-18deg) rotateX(10deg) rotateZ(1deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.laptop-tilt:hover {
+  transform: rotateY(-10deg) rotateX(5deg) rotateZ(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptop-tilt {
+    transform: none;
+  }
+  .laptop-tilt:hover {
+    transform: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B0508;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D1121B;
+}
